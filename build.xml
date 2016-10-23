@@ -1,0 +1,20 @@
+<project name="tarefas" default="empacotar">
+	
+	<target name="limpar">
+		<delete dir="build" />
+		<mkdir dir="build" />
+		
+	</target>
+
+	<target name="compilar" depends="limpar">
+		<javac srcdir="src" destdir="build">
+		</javac>
+	</target>
+
+	<target name="empacotar" depends="compilar">
+		<jar destfile="build/ant.jar" basedir="bin" />
+	</target>
+
+
+</project>
+
